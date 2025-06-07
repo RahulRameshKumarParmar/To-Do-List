@@ -1,0 +1,33 @@
+.off-canvas {
+    width: 100%;
+    height: 48%;
+    background-color: darkblue;
+    position: fixed;
+    top: -50%;
+    transition: 0.5s;
+}
+
+.showCanvas {
+    top: 0%;
+}
+
+.off-nProject a,
+.off-log-in a, .off-signOut a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.off-nProject {
+    margin-top: 90px;
+    text-align: center;
+}
+
+.off-log-in, .off-signOut {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.off-log-in i, .off-signOut i {
+    padding: 5px;
+}
