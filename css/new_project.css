@@ -1,0 +1,26 @@
+.logInForm h3 {
+    color: rgb(0, 60, 255);
+}
+
+.titleBox,
+.managerBox,
+.emailBox {
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 65, 139, 0.459);
+}
+
+input:focus {
+    outline: 4px solid rgba(0, 132, 255, 0.281);
+}
+
+input::placeholder {
+    padding-left: 7px;
+}
+
+.submitBtn{
+    background-color: darkblue;
+    color: white;
+    padding: 7px 13px 7px 13px;
+    border-radius: 8px;
+}
