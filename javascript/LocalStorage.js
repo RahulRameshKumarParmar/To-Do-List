@@ -1,6 +1,6 @@
 export let taskBtn, mdTaskBtn, settingBtn, mdSettingBtn, saveBtn, addTaskBtn, signInMessage, deleteProjectBtn, submitBtn, taskList;
 
-let newTaskModel, cancelAllBtn, overlay, deleteProjectName, projectSettingBoxContainer, title, startDate, endDate, task, projectTitle, projectName, threeDotBtn, smallScreenProjectTitleBox, titleBox, managerBox, emailBox;
+let newTaskModel, cancelAllBtn, overlay, deleteProjectName, projectSettingBoxContainer, title, startDate, endDate, task, projectTitle, projectName, threeDotBtn, smallScreenProjectTitleBox, titleBox, managerBox, emailBox, showEye, hideEye, passwordBox;
 
 export function HTMLcontentLoad() {
     taskBtn = document.querySelector(".taskBtn");
@@ -30,6 +30,9 @@ smallScreenProjectTitleBox = document.querySelector(".smallScreenProjectTitleBox
 titleBox = document.querySelector(".titleBox");
 managerBox = document.querySelector(".managerBox");
 emailBox = document.querySelector(".emailBox");
+showEye = document.querySelector(".showEye");
+hideEye = document.querySelector(".hideEye");
+passwordBox = document.querySelector(".passwordBox");
 
 export function showProjectName() {
     if (projectTitle) {
@@ -209,4 +212,18 @@ export function deleteTaskById(idToDelete, list, days) {
 
 threeDotBtn?.addEventListener("click", () => {
     smallScreenProjectTitleBox.classList.toggle("showOverlay");
+});
+
+showEye?.addEventListener("click", () => {
+    showEye.classList.add("d-none");
+    hideEye.classList.remove("d-none");
+
+    passwordBox.type = "text";
+});
+
+hideEye?.addEventListener("click", () => {
+    showEye.classList.remove("d-none");
+    hideEye.classList.add("d-none");
+
+    passwordBox.type = "password";
 })
