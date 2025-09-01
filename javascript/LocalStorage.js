@@ -1,13 +1,16 @@
-export let taskBtn, settingBtn, saveBtn, addTaskBtn, deleteProjectBtn, submitBtn;
+export let taskBtn, mdTaskBtn, settingBtn, mdSettingBtn, saveBtn, addTaskBtn, signInMessage, deleteProjectBtn, submitBtn, taskList;
 
-let newTaskModel, cancelAllBtn, overlay, taskList, deleteProjectName, projectSettingBoxContainer, title, startDate, endDate, task, projectTitle, projectName, mdTaskBtn, mdSettingBtn, threeDotBtn, smallScreenProjectTitleBox, titleBox, managerBox, emailBox;
+let newTaskModel, cancelAllBtn, overlay, deleteProjectName, projectSettingBoxContainer, title, startDate, endDate, task, projectTitle, projectName, threeDotBtn, smallScreenProjectTitleBox, titleBox, managerBox, emailBox;
 
 export function HTMLcontentLoad() {
     taskBtn = document.querySelector(".taskBtn");
+    mdTaskBtn = document.querySelector(".mdTaskBtn");
     settingBtn = document.querySelector(".settingBtn");
+    mdSettingBtn = document.querySelector(".mdSettingBtn");
     saveBtn = document.querySelector(".saveBtn");
     addTaskBtn = document.querySelector(".addTaskBtn");
     submitBtn = document.querySelector(".submitBtn");
+    signInMessage = document.querySelector(".signInMessageBox");
     deleteProjectBtn = document.querySelector(".deleteProjectBtn")
     projectTitle = document.getElementById("projectTitle");
     projectName = localStorage.getItem("projectName");
@@ -22,8 +25,6 @@ projectSettingBoxContainer = document.querySelector(".projectSettingBoxContainer
 cancelAllBtn = document.querySelectorAll(".cancelBtn, .closeBtn");
 overlay = document.querySelector(".overlay");
 deleteProjectName = document.querySelector(".projectName");
-mdTaskBtn = document.querySelector(".mdTaskBtn");
-mdSettingBtn = document.querySelector(".mdSettingBtn");
 threeDotBtn = document.querySelector(".threeDotBtn");
 smallScreenProjectTitleBox = document.querySelector(".smallScreenProjectTitleBox");
 titleBox = document.querySelector(".titleBox");
@@ -208,16 +209,4 @@ export function deleteTaskById(idToDelete, list, days) {
 
 threeDotBtn?.addEventListener("click", () => {
     smallScreenProjectTitleBox.classList.toggle("showOverlay");
-})
-
-mdTaskBtn?.addEventListener("click", () => {
-    mdTaskBtn.classList.add("active");
-    mdSettingBtn.classList.remove("active");
-    showTask();
-})
-
-mdSettingBtn?.addEventListener("click", () => {
-    mdSettingBtn.classList.add("active");
-    mdTaskBtn.classList.remove("active");
-    showSetting();
 })

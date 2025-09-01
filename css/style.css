@@ -2,6 +2,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .navbar {
     background-color: darkblue;
     z-index: 1000;
@@ -68,6 +74,10 @@
         display: none;
     }
 
+    /* #taskList {  
+        height: 50vh;
+    } */
+
     .projectSettingBoxContainer {
         width: 57%;
     }
@@ -77,13 +87,22 @@
     }
 }
 
-@media (max-width: 991px){
+@media (max-width: 991px) {
+    /* #taskList {
+        height: 55vh;
+    } */
+
     .newTaskModel {
         width: 70%;
     }
+
 }
 
 @media (max-width: 576px) {
+    /* #taskList {
+        height: 60vh;
+    } */
+
     .projectSettingBoxContainer {
         width: 100%;
     }
@@ -275,6 +294,27 @@
     border: none;
     background: transparent;
     color: blue;
+}
+
+.signInMessageBox{
+    text-align: center;
+    background-color: rgba(255, 255, 0, 0.438);
+    padding: 1rem;
+    margin: 3rem;
+}
+
+.signInMessage{
+    font-size: x-large;
+    margin-top: 1%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.signInMessage:hover{
+    color: blue;
+    text-decoration: underline;
 }
 
 .projectName {

@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebas
 
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
-import { taskBtn, showTask, settingBtn, showSetting, saveBtn, submitSaveDetails, addTaskBtn, addTaskModel, deleteProjectBtn, deleteProject, submitBtn, saveProjectName, windowLoad, HTMLcontentLoad, hideSetting, showProjectName} from "./LocalStorage.js";
+import { taskBtn, showTask, settingBtn, showSetting, saveBtn, submitSaveDetails, addTaskBtn, signInMessage, addTaskModel, deleteProjectBtn, deleteProject, submitBtn, saveProjectName, windowLoad, HTMLcontentLoad, hideSetting, showProjectName, mdTaskBtn, mdSettingBtn } from "./LocalStorage.js";
 
 async function navbar() {
     const response = await fetch("navbar.html");
@@ -67,6 +67,10 @@ async function navbar() {
                 showProjectName();
                 windowLoad();
 
+                if (signInMessage) {
+                    signInMessage.style.display = "none";
+                }
+
                 formSubmit?.addEventListener("submit", (event) => {
                     event.preventDefault();
                 })
@@ -80,7 +84,19 @@ async function navbar() {
                     showTask();
                 });
 
+                mdTaskBtn?.addEventListener("click", () => {
+                    mdTaskBtn.classList.add("active");
+                    mdSettingBtn.classList.remove("active");
+                    showTask();
+                })
+
                 settingBtn?.addEventListener("click", () => {
+                    showSetting();
+                })
+
+                mdSettingBtn?.addEventListener("click", () => {
+                    mdSettingBtn.classList.add("active");
+                    mdTaskBtn.classList.remove("active");
                     showSetting();
                 })
 
@@ -103,6 +119,10 @@ async function navbar() {
                 offSignOut.classList.add("hideLogOut");
 
                 hideSetting();
+
+                if (signInMessage) {
+                    signInMessage.style.display = "block";
+                }
 
                 formSubmit?.addEventListener("submit", (event) => {
                     event.preventDefault();
